@@ -13,8 +13,8 @@ public class CameraController : MonoBehaviour
     void FixedUpdate()
     {
         // Get the mouse movement values
-        float mouseX = Input.GetAxis("Mouse X") * -sensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * -sensitivity;
 
         // Calculate the new rotation values based on the mouse movement
         xRotation += mouseY;
