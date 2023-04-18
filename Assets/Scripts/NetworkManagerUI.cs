@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Unity.Netcode;
 
-public class NetworkManagerUI : MonoBehaviour
+public class NetworkManagerUI : NetworkBehaviour
 {
     [SerializeField] private Button hostButton;
     [SerializeField] private Button clientButton;
-    public GameObject sceneCam;
+    [SerializeField] private GameObject charactorSelector;
 
     private void Awake()
     {
@@ -18,5 +18,11 @@ public class NetworkManagerUI : MonoBehaviour
         clientButton.onClick.AddListener(() => {
             NetworkManager.Singleton.StartClient();
         });
+    }
+
+    //trying to find a way to have different types of player characters spawn in
+    public void PlayerConnected(NetworkPrefab player)
+    {
+        
     }
 }
