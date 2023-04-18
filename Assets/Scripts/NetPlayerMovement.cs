@@ -10,24 +10,20 @@ public class NetPlayerMovement : NetworkBehaviour
     public float dragMultiplyer;
     public float topSpeed;
 
+    [SerializeField] private GameObject camContainer; //<------- add this in the inspector
     private Rigidbody rb;
     private void Start()
     {
+        //skip if we don't own this bad boi
         if (!IsOwner) return;
-        
-        //disable every single camera 
+
+        //double-ly make sure this is our own thing, I guess.
         if (IsLocalPlayer)
         {
+            //enable camera container (& therefore camera)
+            camContainer.SetActive(true);
+            //find camera component
             mainCam = GetComponentInChildren<Camera>();
-            foreach (GameObject obj in FindObjectsOfType<GameObject>())
-            {
-                if (obj.GetComponent<Camera>())
-                {
-                    obj.SetActive(false);
-                }
-            }
-            //re-enable our one
-            mainCam.gameObject.SetActive(true);
         }
         //ez rigidbody reference
         rb = GetComponent<Rigidbody>();
@@ -35,6 +31,7 @@ public class NetPlayerMovement : NetworkBehaviour
 
     private void FixedUpdate()
     {
+        //skip if we don't own this bad boi
         if (!IsOwner) return;
 
         //read inputs
