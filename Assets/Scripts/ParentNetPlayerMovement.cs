@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class NetPlayerMovement : NetworkBehaviour
+public class ParentNetPlayerMovement : NetworkBehaviour
 {
     private Camera mainCam;
-    public float speed;
-    public float dragMultiplyer;
-    public float topSpeed;
+    private float speed;
+    private float dragMultiplyer;
+    private float topSpeed;
 
-    [SerializeField] private GameObject camContainer; //<------- add this in the inspector
+    private GameObject currentFruit;
+
+    [SerializeField] private GameObject camContainer;
     private Rigidbody rb;
 
     private void Start()
@@ -30,21 +32,15 @@ public class NetPlayerMovement : NetworkBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    public void Create()
+    public void UpdateState(Dictionary<string, float> stats, Vector3 camOffset)
     {
-        //skip if we don't own this bad boi
-        if (!transform.parent.gameObject.GetComponent<NetworkObject>().IsOwner) return;
+        //update camera position
+        GetComponentInChildren<Camera>().GetComponent<cameraScript>().ChangeOffset(camOffset);
 
-        //double-ly make sure this is our own thing, I guess.
-        if (transform.parent.gameObject.GetComponent<NetworkObject>().IsLocalPlayer)
-        {
-            //enable camera container (& therefore camera)
-            camContainer.SetActive(true);
-            //find camera component
-            mainCam = GetComponentInChildren<Camera>();
-        }
-        //ez rigidbody reference
-        rb = GetComponent<Rigidbody>();
+        //update physical stats
+        speed = stats["speed"];
+        topSpeed = stats["topSpeed"];
+        dragMultiplyer = stats["dragMultiplyer"];
     }
 
     private void FixedUpdate()
