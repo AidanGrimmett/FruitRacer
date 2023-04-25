@@ -31,7 +31,6 @@ public class SelectFruitUIManager : MonoBehaviour
                 startButton.interactable = true;
             }
         }
-
     }
 
     private bool GetSelectedFruit()

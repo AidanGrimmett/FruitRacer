@@ -22,7 +22,7 @@ public class GameManagerInitialisation : MonoBehaviour
     private void Start()
     {
         //this won't happen when the menu does it :p
-        PlayerPrefs.SetString("fruitName", "banana");
+        //PlayerPrefs.SetString("fruitName", "apple");
 
         //retrieve the chosen fruit obj name
         string selectedFruitName = PlayerPrefs.GetString("fruitName");
