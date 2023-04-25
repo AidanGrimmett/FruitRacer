@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene_Aidan - Copy.unity
     guid: ec18e824d87a09d49970c1d18808bf44
+  - enabled: 1
+    path: Assets/Scenes/GameScene_Aidan - Qualifying.unity
+    guid: 0835de815feb0dc468bd0fba4687e46c
+  - enabled: 1
+    path: Assets/Scenes/SelectFruit.unity
+    guid: 90b4b3f3c3bca784b984e1a2f088321c
   m_configObjects: {}
