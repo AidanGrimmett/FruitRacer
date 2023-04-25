@@ -1,13 +1,12 @@
-# Blender 3.5.0 MTL File: 'Ban.blend'
+# Blender 3.5.0 MTL File: 'cherry.blend'
 # www.blender.org
 
-newmtl BananaMat
-Ns 0.000000
+newmtl Material
+Ns 250.000000
 Ka 1.000000 1.000000 1.000000
-Kd 0.800000 0.302865 0.013091
 Ks 0.500000 0.500000 0.500000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Ka BananaTex.png
+map_Kd CherryTex.png
