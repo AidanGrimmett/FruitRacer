@@ -19,10 +19,4 @@ public class NetworkManagerUI : NetworkBehaviour
             NetworkManager.Singleton.StartClient();
         });
     }
-
-    //trying to find a way to have different types of player characters spawn in
-    public void PlayerConnected(NetworkPrefab player)
-    {
-        
-    }
 }

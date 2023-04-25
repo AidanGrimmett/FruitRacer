@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene_Aidan.unity
     guid: b4b59a89e0c195d45826870761adce96
+  - enabled: 1
+    path: Assets/Scenes/GameScene_Aidan - Copy.unity
+    guid: ec18e824d87a09d49970c1d18808bf44
   m_configObjects: {}
