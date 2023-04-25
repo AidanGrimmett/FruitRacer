@@ -22,7 +22,7 @@ public class GameManagerInitialisation : MonoBehaviour
     private void Start()
     {
         //this won't happen when the menu does it :p
-        PlayerPrefs.SetString("fruitName", "blocky");
+        PlayerPrefs.SetString("fruitName", "banana");
 
         //retrieve the chosen fruit obj name
         string selectedFruitName = PlayerPrefs.GetString("fruitName");
@@ -59,18 +59,19 @@ public class GameManagerInitialisation : MonoBehaviour
                 player.GetComponent<NewPlayerMovement>().Freeze();
             }
 
-            if (timer <= 2f && timer > 1f)
+            if (timer <= 2f && timer > 1f && countdownText.text != "2")
             {
                 countdownText.SetText("2");
             }
-            else if (timer <= 1f && timer > 0f)
+            else if (timer <= 1f && timer > 0f && countdownText.text != "1")
             {
                 countdownText.SetText("1");
             }
-            else if (timer <= 0f && timer > -1f)
+            else if (timer <= 0f && timer > -1f && countdownText.text != "Go!")
             {
                 countdownText.SetText("Go!");
                 player.GetComponent<NewPlayerMovement>().Defrost();
+                GetComponent<QualiManager>().StartQuali();
             }
             else if (timer <= -1f)
             {
