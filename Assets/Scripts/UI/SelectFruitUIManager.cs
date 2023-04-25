@@ -15,7 +15,7 @@ public class SelectFruitUIManager : MonoBehaviour
     private Transform[] fruitUIOptions;
     void Start()
     {
-        //startButton = GameObject.Find("Confirm").GetComponent<Button>();
+        startButton = GameObject.Find("Confirm").GetComponent<Button>();
         //startButton.onClick.AddListener(ConfirmFruit);
 
         fruitUIOptions = GameObject.Find("FruitsContainer").GetComponentsInChildren<Transform>();
@@ -29,10 +29,6 @@ public class SelectFruitUIManager : MonoBehaviour
             if (GetSelectedFruit())
             {
                 startButton.interactable = true;
-            }
-            else
-            {
-                startButton.interactable = false;
             }
         }
 
