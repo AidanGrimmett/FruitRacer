@@ -3068,7 +3068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a979b6391fd74a14d9d00ed92a8d64d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intensity: 300
+  intensity: 100
 --- !u!23 &1148038318
 MeshRenderer:
   m_ObjectHideFlags: 0

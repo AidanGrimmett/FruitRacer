@@ -53,7 +53,7 @@ public class NewPlayerMovement : MonoBehaviour
         {
             //just applying whatever the opposite of the current velocity is, multiplied by how much drag we want
             Vector3 currentVelocity = rb.velocity;
-            rb.AddForce((-1 * currentVelocity) * dragMultiplyer);
+            rb.AddForce(new Vector3(-currentVelocity.x, 0, -currentVelocity.z) * dragMultiplyer);
         }
     }
 
@@ -77,7 +77,7 @@ public class NewPlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Plane" && inAir)
+        if (inAir)
         {
             rb.maxAngularVelocity = 7.0f;
             inAir = false;

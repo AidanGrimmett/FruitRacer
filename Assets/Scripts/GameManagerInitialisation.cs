@@ -54,7 +54,7 @@ public class GameManagerInitialisation : MonoBehaviour
     {
         if (doCountdown)
         {
-            if (timer >= countdownDuration)
+            if (timer >= countdownDuration && !player.GetComponent<Rigidbody>().isKinematic)
             {
                 player.GetComponent<NewPlayerMovement>().Freeze();
             }
