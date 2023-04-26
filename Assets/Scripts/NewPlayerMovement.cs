@@ -12,6 +12,8 @@ public class NewPlayerMovement : MonoBehaviour
 
     private bool inAir = false;
 
+    private AudioSource[] bangSounds;
+
     [SerializeField] private GameObject camContainer; //<------- add this in the inspector
     private Rigidbody rb;
 
@@ -21,6 +23,8 @@ public class NewPlayerMovement : MonoBehaviour
         mainCam = GetComponentInChildren<Camera>();
         //ez rigidbody reference
         rb = GetComponent<Rigidbody>();
+
+        bangSounds = GameObject.Find("CollisionSounds").GetComponentsInChildren<AudioSource>();
     }
 
     private void FixedUpdate()
@@ -55,6 +59,11 @@ public class NewPlayerMovement : MonoBehaviour
             Vector3 currentVelocity = rb.velocity;
             rb.AddForce(new Vector3(-currentVelocity.x, 0, -currentVelocity.z) * dragMultiplyer);
         }
+
+        if (transform.position.y > 5.0f)
+        {
+            inAir = true;
+        }
     }
 
     public void Freeze()
@@ -79,6 +88,10 @@ public class NewPlayerMovement : MonoBehaviour
     {
         if (inAir)
         {
+            int soundCount = bangSounds.Length;
+            int soundIndex = Random.Range(1, soundCount - 1);
+            bangSounds[soundIndex].Play();
+
             rb.maxAngularVelocity = 7.0f;
             inAir = false;
         }
