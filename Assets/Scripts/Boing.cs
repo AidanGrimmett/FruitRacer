@@ -5,6 +5,7 @@ using UnityEngine;
 public class Boing : MonoBehaviour
 {
     public float intensity;
+    public AudioSource boingSound;
 
     //Dictionary<string, float> bouncers = new Dictionary<string, float>() {
     //    { "regular", 80.0f },
@@ -19,6 +20,7 @@ public class Boing : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("BOINGGG");
+            boingSound.Play();
             other.GetComponent<NewPlayerMovement>().Fly(intensity);
         }
     }
