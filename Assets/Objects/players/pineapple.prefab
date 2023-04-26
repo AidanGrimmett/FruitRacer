@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7d3f4ec12bef549952970ee0107805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 18
   topSpeed: 40
   dragMultiplyer: 4
   camContainer: {fileID: 1860205949924215035}

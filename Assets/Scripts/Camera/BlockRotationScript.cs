@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class BlockRotationScript : MonoBehaviour
 {
-    private void FixedUpdate()
+    //private Vector3 offset;
+    //private void Start()
+    //{
+    //    offset = transform.localPosition;
+    //    Debug.Log(offset);
+    //}
+    private void Update()
     {
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
+        transform.position = transform.parent.transform.position;
     }
 }
