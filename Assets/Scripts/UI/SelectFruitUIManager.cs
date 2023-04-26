@@ -14,6 +14,12 @@ public class SelectFruitUIManager : MonoBehaviour
 
     private Transform[] fruitUIOptions;
     private RectTransform[] fruitBgImages;
+
+    public AudioSource selectSound;
+    public AudioSource startSound;
+
+    private bool starting = false;
+
     void Start()
     {
         startButton = GameObject.Find("Confirm").GetComponent<Button>();
@@ -46,6 +52,14 @@ public class SelectFruitUIManager : MonoBehaviour
                 startButton.interactable = true;
             }
         }
+
+        if (starting)
+        {
+            if (!startSound.isPlaying)
+            {
+                SceneManager.LoadScene("GameScene_Aidan - Qualifying");
+            }
+        }
     }
 
     private bool GetSelectedFruit()
@@ -62,6 +76,7 @@ public class SelectFruitUIManager : MonoBehaviour
                 if (hitInfo.transform == fruit)
                 {
                     fruitType = fruit.name;
+                    selectSound.Play();
                     //Debug.Log(fruitType);
                     return true;
                 }
@@ -72,7 +87,8 @@ public class SelectFruitUIManager : MonoBehaviour
 
     public void ConfirmFruit()
     {
+        starting = true;
+        startSound.Play();
         PlayerPrefs.SetString("fruitName", fruitType);
-        SceneManager.LoadScene("GameScene_Aidan - Qualifying");
     }
 }
