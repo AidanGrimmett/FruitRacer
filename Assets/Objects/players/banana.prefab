@@ -131,7 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   topSpeed: 25
-  dragMultiplyer: 2
+  dragMultiplyer: 3
   camContainer: {fileID: 1860205949924215035}
 --- !u!1001 &565200062723891157
 PrefabInstance:

@@ -110,7 +110,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282317299210041434}
-  m_Material: {fileID: 13400000, guid: c86e0d17888707d48bdd9be4596e1e07, type: 2}
+  m_Material: {fileID: 13400000, guid: 7dcef46874bcffd4d98880f30a72e04d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -129,9 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7d3f4ec12bef549952970ee0107805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  topSpeed: 25
-  dragMultiplyer: 2
+  speed: 30
+  topSpeed: 20
+  dragMultiplyer: 0.8
   camContainer: {fileID: 1860205949924215035}
 --- !u!1 &4168356660424659081
 GameObject:
