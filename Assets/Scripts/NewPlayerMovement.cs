@@ -10,6 +10,8 @@ public class NewPlayerMovement : MonoBehaviour
     public float topSpeed;
     public float dragMultiplyer;
 
+    private bool inAir = false;
+
     [SerializeField] private GameObject camContainer; //<------- add this in the inspector
     private Rigidbody rb;
 
@@ -63,5 +65,22 @@ public class NewPlayerMovement : MonoBehaviour
     public void Defrost()
     {
         rb.isKinematic = false;
+    }
+
+    public void Fly(float intensity)
+    {
+        rb.AddForce(Vector3.up * speed * intensity);
+        rb.maxAngularVelocity = 100.0f;
+        rb.AddTorque(rb.velocity * 75.0f);
+        inAir = true;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Plane" && inAir)
+        {
+            rb.maxAngularVelocity = 7.0f;
+            inAir = false;
+        }
     }
 }
