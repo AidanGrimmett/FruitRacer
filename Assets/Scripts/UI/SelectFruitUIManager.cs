@@ -13,12 +13,15 @@ public class SelectFruitUIManager : MonoBehaviour
     private Button startButton;
 
     private Transform[] fruitUIOptions;
+    private RectTransform[] fruitBgImages;
     void Start()
     {
         startButton = GameObject.Find("Confirm").GetComponent<Button>();
         //startButton.onClick.AddListener(ConfirmFruit);
 
         fruitUIOptions = GameObject.Find("FruitsContainer").GetComponentsInChildren<Transform>();
+        fruitBgImages = GameObject.Find("FruitBg").GetComponentsInChildren<RectTransform>();
+
     }
 
     // Update is called once per frame
@@ -28,6 +31,18 @@ public class SelectFruitUIManager : MonoBehaviour
         {
             if (GetSelectedFruit())
             {
+                foreach (RectTransform image in fruitBgImages)
+                {
+                    if (image.name != "FruitBg")
+                    {
+                        image.gameObject.GetComponent<RawImage>().enabled = false;
+                        if (image.name == fruitType)
+                        {
+                            image.gameObject.GetComponent<RawImage>().enabled = true;
+                        }
+                    }
+                }
+
                 startButton.interactable = true;
             }
         }
