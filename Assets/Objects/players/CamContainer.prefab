@@ -129,7 +129,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2163760829224752217}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!1 &2163760830013937454
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 2163760830013937453}
   - component: {fileID: 2163760830013937452}
   - component: {fileID: 7261171813821838526}
+  - component: {fileID: 3093219006550248804}
   m_Layer: 0
   m_Name: CamContainer
   m_TagString: Untagged
@@ -192,3 +193,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!81 &3093219006550248804
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2163760830013937454}
+  m_Enabled: 1

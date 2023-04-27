@@ -88,9 +88,10 @@ public class NewPlayerMovement : MonoBehaviour
     {
         if (inAir)
         {
-            //int soundCount = bangSounds.Length;
-            //int soundIndex = Random.Range(1, soundCount - 1);
-            //bangSounds[soundIndex].Play();
+            int soundCount = bangSounds.Length;
+            int soundIndex = Random.Range(1, soundCount - 1);
+            bangSounds[soundIndex].time = 0.4f;
+            bangSounds[soundIndex].Play();
 
             rb.maxAngularVelocity = 7.0f;
             inAir = false;

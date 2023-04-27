@@ -81,6 +81,7 @@ public class SelectFruitUIManager : MonoBehaviour
                 if (hitInfo.transform == fruit)
                 {
                     fruitType = fruit.name;
+                    selectSound.time = 0.4f;
                     selectSound.Play();
                     //Debug.Log(fruitType);
                     return true;
