@@ -83,5 +83,12 @@ public class QualiManager : MonoBehaviour
             timer += Time.deltaTime;
             timerTMP.SetText(timer.ToString("F1") + "s");
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameObject player = GetComponent<GameManagerInitialisation>().GetPlayer();
+            player.transform.position = checkpointTransforms[checkpointIndex - 2].position;
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
     }
 }

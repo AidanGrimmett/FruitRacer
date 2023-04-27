@@ -129,9 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7d3f4ec12bef549952970ee0107805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 25
   topSpeed: 25
-  dragMultiplyer: 3
+  dragMultiplyer: 2.5
   camContainer: {fileID: 1860205949924215035}
 --- !u!1001 &565200062723891157
 PrefabInstance:

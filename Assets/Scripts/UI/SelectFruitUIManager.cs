@@ -53,6 +53,11 @@ public class SelectFruitUIManager : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         if (starting)
         {
             if (!startSound.isPlaying)
