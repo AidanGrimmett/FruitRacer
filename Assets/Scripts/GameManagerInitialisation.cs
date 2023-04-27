@@ -52,6 +52,10 @@ public class GameManagerInitialisation : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("SelectFruit", LoadSceneMode.Single);
+        }
         if (doCountdown)
         {
             if (timer >= countdownDuration && !player.GetComponent<Rigidbody>().isKinematic)
